@@ -1,6 +1,7 @@
+<?php
 /*
   +----------------------------------------------------------------------+
-  | EX1 extension <http://ex1.tekwire.net>                               |
+  | PCS extension <http://pcs.tekwire.net>                               |
   +----------------------------------------------------------------------+
   | Copyright (c) 2015 The PHP Group                                     |
   +----------------------------------------------------------------------+
@@ -16,29 +17,22 @@
   +----------------------------------------------------------------------+
 */
 
-#ifndef __PHP_EX1_H
-#define __PHP_EX1_H
+//=============================================================================
 
-/* In a real PCS client extension, the 'pcs_client' directory would be
-   duplicated from the PCS tree to the client tree (there would be no
-   '../..' prefix in the path below.
-   In the examples, we use only one 'pcs_client' directory to avoid
-   manual copies after each modification.
-*/
+namespace Example1 {
 
-#include "../../pcs_client/client.h"
+class Dummy3
+{
 
-/*============================================================================*/
+//-------
 
-#define PHP_EX1_VERSION "0.0.1" /* The extension version */
-
-#define PHP_EX1_EXTNAME "ex1"
-
-extern zend_module_entry ex1_module_entry;
-
-#define phpext_ex1_ptr &ex1_module_entry
-
-/*============================================================================*/
-
-/*============================================================================*/
-#endif /* __PHP_EX1_H */
+public function hello()
+{
+	echo "My name is Dummy3 !\n";
+}
+	
+//---
+} // End of class
+//===========================================================================
+} // End of namespace
+//===========================================================================
