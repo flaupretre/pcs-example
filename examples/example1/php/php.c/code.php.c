@@ -63,11 +63,17 @@ static char code_string4[]= { /* ext/ex1/Dummy5.php */
   125, 32, 10, 10, 125, 32, 10, 10, 0 };
 
 
-static PCS_DESCRIPTOR code[6] = {
-  { code_string0, 163, "ext/ex1/Dummy1.php", 18 },
-  { code_string1, 169, "ext/ex1/Dummy2.php", 18 },
-  { code_string2, 134, "ext/ex1/Dummy3.php", 18 },
-  { code_string3, 136, "ext/ex1/Dummy4.php", 18 },
-  { code_string4, 168, "ext/ex1/Dummy5.php", 18 },
-  { NULL }
+static struct {
+	int version;
+	char *data;
+	size_t data_len;
+	char *path;
+	size_t path_len;
+} code[6] = {
+  { 0, code_string0, 163, "ext/ex1/Dummy1.php", 18 },
+  { 0, code_string1, 169, "ext/ex1/Dummy2.php", 18 },
+  { 0, code_string2, 134, "ext/ex1/Dummy3.php", 18 },
+  { 0, code_string3, 136, "ext/ex1/Dummy4.php", 18 },
+  { 0, code_string4, 168, "ext/ex1/Dummy5.php", 18 },
+  { 0, NULL }
 };
