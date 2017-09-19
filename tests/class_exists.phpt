@@ -1,5 +1,5 @@
 --TEST--
-Autoload extension class through class_exists()
+heck PHP class via class_exists()
 --EXTENSIONS--
 pcs
 --FILE--
@@ -9,6 +9,6 @@ var_dump(class_exists("Example1\\Dummy2"));
 ?>
 ===DONE===
 --EXPECT--
-bool(false)
+bool(true)
 bool(true)
 ===DONE===

@@ -34,7 +34,7 @@
    PCS API available to client extensions.
 */
 
-#include "ext/pcs/client.h"
+#include "ext/pcs/pcs_client.h"
 
 /*============================================================================*/
 
@@ -65,7 +65,7 @@ long pcs_file_count;
    The path of the generated file is defined in Makefile.frag.
 */
 
-#include "php/phpc/code.phpc"
+#include "pcs/phpc/ex1.phpc"
 
 /*============================================================================*/
 
@@ -132,8 +132,7 @@ static PHP_MINIT_FUNCTION(ex1)
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 /* Here we register our PHP scripts in PCS.
 
-   That's the only interaction we'll have with PCS as, once it is done, PCS
-   will autoload these scripts everytime it is needed.
+   That's the only interaction we'll have with PCS.
    
    Note that PCS_registerEmbedded() returns the number of scripts registered.
    You may store this value or discard it, but you must at least test whether
@@ -141,7 +140,7 @@ static PHP_MINIT_FUNCTION(ex1)
    function execution and return FAILURE too. This will abort PHP execution.
 */
 
-	pcs_file_count = PCS_registerEmbedded(code, "ext/ex1", sizeof("ext/ex1") -1, 0);
+	pcs_file_count = PCS_registerEmbedded(ex1_pcs_code, "ext/ex1", sizeof("ext/ex1") -1, 0);
 	if (pcs_file_count == FAILURE) return FAILURE;
 /*============================================================================*/
 	

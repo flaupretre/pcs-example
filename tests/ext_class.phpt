@@ -1,5 +1,5 @@
 --TEST--
-Autoload an extension class
+Access a PHP class
 --EXTENSIONS--
 pcs
 --FILE--
